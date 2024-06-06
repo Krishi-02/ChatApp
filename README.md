@@ -1,6 +1,6 @@
 # ChatApp
 # Project Overview 
-This project is a web application built with Flask, designed to be chat app which has OPENAI API integrated with frontend of HTML, CSS and JS. 
+This project is a web application built with Flask, designed to be chat app which has OPENAI API integrated with frontend of HTML, CSS, JS and TailwindCSS. 
 # Requiremnts
 `pip install Flask firebase-admin pymongo`
 `npm install tailwindcss`
