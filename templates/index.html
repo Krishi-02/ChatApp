@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/main.css">
+    <style>
+        .right2 {
+            display: none;
+        }
+    </style>
+    <title>Chat App</title>
+</head>
+<body>
+    <body class="bg-app-background">
+        <div class="flex h-[100vh] text-white">
+            <div class="left bg-[#202123] w-2/12">
+    
+                <button
+                    class="w-[90%] py-2 m-2 px-10 space-x-2 border-white border rounded-md flex mx-4 justify-start items-center hover:opacity-70">
+                    <span>New Chat</span>
+                </button>
+                <div class="text-xs m-4 mx-8 text-gray-400">Today</div>
+                <div class="chats flex flex-col justify-center items-center space-y-2">
+    
+    
+                    {% for chat in myChats %} 
+                    <div class="chat space-x-2 opacity-80 w-[90%] px-5 py-2 rounded-md bg-gray-600 cursor-pointer flex justify-start items-center">
+                        <span>{{chat.question}}</span>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+                <div class="">
+                    <form action="/logout" method="POST">
+                        <button type="submit">Logout</button>
+                </div>
+            </div>
+    
+    
+            <div class="right1 w-10/12 flex justify-center items-center flex-col">
+                <div class="text-center w-full text-4xl font-bold my-10">
+                    ChatGPT
+                </div>
+                <div class="itemsrow flex py-4 w-[43vw] justify-around">
+                    <div class="examples flex flex-col justify-center items-center">
+                </div>
+    
+                <div class="input w-full text-center my-24 flex items-center justify-center flex-col">
+                    <div class="buttonsvg pl-16 w-[50vw] flex">
+                        <input class="w-full p-4 bg-gray-600 rounded-md" placeholder="Send a Message" type="text"
+                            name="text" id="questionInput">
+    
+                        <button id="sendButton" class="relative -left-20 pl-10">
+                            <img src='../static/assets/sendbutton1.png' alt='send Button' class="w-8"/>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="right2 w-full flex flex-col items-center h-fit">
+            <div class="box1 m-auto py-7 flex justify-start w-[40vw] items-center space-x-6">
+                <img class="w-9"
+                    src=""
+                    alt="">
+                <div id="question2">Loading...</div>
+            </div>
+            <div class="box2 py-7 flex justify-center w-full items-center">
+                <div class="box w-[40vw] flex justify-start space-x-6">
+                    <img class="w-9 h-9" src="../static/assets/bot_icon.png" alt="">
+                    <div class="flex space-y-4 flex-col" id="chatSpace">
+                        <div id="question1">Loading...</div>
+                        <div id="solution">Loading...</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input pt-70 w-full text-center mt-52 flex items-center justify-center flex-col">
+                <div class="buttonsvg pl-16 w-[50vw] flex">
+                    <input class="w-full p-4 bg-white rounded-md text-black" placeholder="Send a Message" type="text"
+                        name="text" id="questionInput1">
+
+                    <button id="sendButton1" class="relative -left-20 pl-10">
+                        <img src='../static/assets/sendbutton1.png' alt='send Button' class="w-8"/>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <script src="/static/js/script.js"></script>
+</body>
+</html>
